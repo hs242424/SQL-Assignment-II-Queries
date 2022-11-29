@@ -1,0 +1,69 @@
+/*1*/
+SELECT Last_Name,
+       First_Name,
+       Department,
+       Job_Title,
+       Hourly_Rate
+  FROM Seattle_Wage_Data
+ ORDER BY Last_Name ASC;
+
+
+/*2*/
+SELECT *
+  FROM Seattle_Wage_Data
+ ORDER BY Hourly_Rate DESC
+ LIMIT 5;
+
+
+/*3*/
+SELECT *
+  FROM Seattle_Wage_Data
+ ORDER BY Hourly_Rate DESC;
+
+/*4*/
+SELECT *
+  FROM Seattle_Wage_Data
+ ORDER BY Department ASC,
+          Hourly_Rate DESC;
+
+
+/*5*/
+SELECT AVG(Hourly_Rate) 
+  FROM Seattle_Wage_Data;
+
+/*6*/
+SELECT Department,
+       AVG(Hourly_Rate) 
+  FROM Seattle_Wage_Data
+ GROUP BY Department;
+
+/*7*/
+SELECT *
+  FROM Seattle_Wage_Data
+ ORDER BY Hourly_Rate DESC
+ LIMIT 10;
+
+/*8*/
+SELECT COUNT(Last_Name) AS [Park and Recreations Employees]
+  FROM Seattle_Wage_Data
+ WHERE Department = "Parks & Recreation";
+
+/*7 number 2*/
+SELECT Department,
+       COUNT(Last_Name) AS [Employee Number]
+  FROM Seattle_Wage_Data
+ GROUP BY Department;
+
+/*8 number 2*/
+SELECT DISTINCT Job_Title
+  FROM Seattle_Wage_Data;
+
+/*9*/
+SELECT COUNT(Last_Name) 
+  FROM Seattle_Wage_Data
+ WHERE Department = "Police Department";
+
+/*10*/
+SELECT AVG(Hourly_Rate) 
+  FROM Seattle_Wage_Data
+ WHERE Department = "Information Technology";
